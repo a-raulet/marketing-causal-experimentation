@@ -1,8 +1,27 @@
-# Causal Inference Platform
+# Marketing Causal Experimentation
 
-A causal inference platform for A/B testing analysis using Bayesian methods and machine learning. Analyzes the Hillstrom email marketing dataset to estimate treatment effects and recommend optimal targeting strategies.
+**Business problem.** An e-commerce retailer sent a men's email, a women's email or no email to 64,000 customers at random. Which campaign actually causes more purchases, how sure can we be, and which customers should receive which email next time?
 
-The Streamlit dashboard is available [here](https://causal-inference-platform.streamlit.app/).
+**Key result.**
+- Conversion: 1.26% with the Mens email vs 0.58% with no email, a +120% lift (94% HDI: +74% to +164%). P(Mens email is the best option) = 0.9999. The Womens email lifts conversion by +55% (+23% to +89%).
+- Spend per customer: $1.42 (Mens) vs $0.65 (no email).
+- Targeting each customer with the email of highest estimated uplift (X-Learner CATE): customers who happened to receive their recommended email converted at 1.91%, against 0.90% on average under random allocation (+111%).
+
+TODO(arnaud): confirm whether the policy evaluation used held-out data (03_causal_ml.ipynb) and say so here.
+
+**Stack.** PyMC and ArviZ (Bayesian A/B/C test), CausalML X-Learner and SHAP (uplift), FastAPI (scoring API), Streamlit (dashboard), Poetry.
+
+**How to run.**
+```bash
+poetry install
+poetry run jupyter lab                                  # notebooks/01 → 03, in order
+poetry run uvicorn src.api.main:app --reload            # API on http://localhost:8000
+cd streamlit && poetry run streamlit run app.py         # dashboard
+```
+
+Live demo: https://causal-inference-platform.streamlit.app
+
+---
 
 ## Overview
 
