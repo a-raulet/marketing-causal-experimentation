@@ -102,7 +102,7 @@ Posterior:  Beta(1 + conversions, 1 + non-conversions)
 Key metrics computed:
 - **P(Treatment > Control)** - Probability of superiority
 - **Lift** - Relative improvement vs control
-- **95% HDI** - Highest Density Interval
+- **94% HDI** - Highest Density Interval
 - **Expected Loss** - Risk of choosing wrong treatment
 
 ### Causal ML (CATE Estimation)
@@ -143,11 +143,13 @@ curl -X POST http://localhost:8000/predict \
 
 ## Key Results
 
+Source: `data/processed/bayesian_results.json` and `notebooks/02_bayesian_ab_testing.ipynb` (94% HDI in brackets).
+
 | Treatment | Conversion Rate | Lift vs Control | P(Best) |
 |-----------|-----------------|-----------------|---------|
-| No E-Mail (Control) | ~5.0% | - | - |
-| Mens E-Mail | ~5.8% | +16% | 0.92 |
-| Womens E-Mail | ~5.4% | +8% | 0.78 |
+| No E-Mail (Control) | 0.58% [0.48%, 0.68%] | - | 0.0000 |
+| Mens E-Mail | 1.26% [1.11%, 1.40%] | +120% [+74%, +164%] | 0.9999 |
+| Womens E-Mail | 0.89% [0.77%, 1.01%] | +55% [+23%, +89%] | 0.0001 |
 
 ## Tech Stack
 
