@@ -7,7 +7,7 @@
 - Spend per customer: $1.42 (Mens) vs $0.65 (no email).
 - Targeting each customer with the email of highest estimated uplift (X-Learner CATE): customers who happened to receive their recommended email converted at 1.91%, against 0.90% on average under random allocation (+111%).
 
-TODO(arnaud): confirm whether the policy evaluation used held-out data (03_causal_ml.ipynb) and say so here.
+(personal reminder: confirm whether the policy evaluation used held-out data (03_causal_ml.ipynb) and say so here)
 
 **Stack.** PyMC and ArviZ (Bayesian A/B/C test), CausalML X-Learner and SHAP (uplift), FastAPI (scoring API), Streamlit (dashboard), Poetry.
 
