@@ -62,7 +62,7 @@ cd streamlit && poetry run streamlit run app.py
 ## Project Structure
 
 ```
-project-02-causal-inference/
+marketing-causal-experimentation/
 ├── data/
 │   ├── raw/hillstrom.csv           # Original dataset
 │   └── processed/                   # Analysis outputs (JSON, CSV)

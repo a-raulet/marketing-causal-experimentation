@@ -2,6 +2,7 @@
 name = "causal-inference-platform"
 version = "0.1.0"
 description = ""
+package-mode = false
 authors = ["Arnaud Raulet <raulet.arnaud@protonmail.com>"]
 
 [tool.poetry.dependencies]
